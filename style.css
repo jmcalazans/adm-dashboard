@@ -1,0 +1,267 @@
+/* General Styles */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  --shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  grid-column: 1/2;
+  background-color: #1992d4;
+}
+.header {
+  grid-column: 2/3;
+  background-color: white;
+}
+.main {
+  grid-column: 2/3;
+  background-color: #e2e8f0;
+}
+
+/* Sidebar */
+.sidebar {
+  display: grid;
+  align-content: start;
+  gap: 50px;
+  padding: 1.5rem;
+  color: white;
+}
+
+.sidebar .logo {
+  font-size: 30px;
+  font-weight: 700;
+  display: grid;
+  grid-template-columns: 50px auto;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.sidebar .logo svg {
+  font-size: 45px;
+}
+
+.sidebar ul {
+  display: grid;
+  gap: 15px;
+}
+
+.sidebar ul li {
+  display: grid;
+  grid-template-columns: 1rem auto;
+  gap: 30px;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Header */
+
+.header {
+  padding: 0 3rem;
+}
+.header .top,
+.header .bottom {
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  justify-content: space-between;
+}
+
+.header .top {
+  padding: 2rem 0 1.5rem;
+}
+.header .search-box {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.header .search-box input {
+  padding: 0.4rem 0.6rem;
+  font-size: 100%;
+  font-family: inherit;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  background-color: #e2e8f0;
+}
+
+.header .search-box svg {
+  font-size: 20px;
+}
+.profile {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile .bell {
+  font-size: 1.8rem;
+}
+.profile img {
+  object-fit: contain;
+  border-radius: 50%;
+}
+.profile .name {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 900;
+}
+
+.left {
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 20px;
+}
+
+.left img {
+  border-radius: 50%;
+}
+
+.left .greeting {
+  padding: 0.5rem 0;
+  font-weight: 500;
+}
+.left .name {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.right {
+  justify-self: center;
+  align-self: center;
+  gap: 15px;
+  display: flex;
+}
+.right button {
+  padding: 0.6rem 2rem;
+  border-radius: 20px;
+  color: white;
+  background-color: #1992d4;
+  border: none;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.right button:hover,
+.right button:focus {
+  background-color: #1372a5;
+}
+
+/* Content */
+
+.content {
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 3fr 1fr;
+}
+.projects .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.projects .card {
+  padding: 2rem 1rem;
+  background-color: white;
+  border-left: 7px solid #f0b429;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+.projects .card h4 {
+  margin-bottom: 0.5rem;
+}
+.projects .card .title {
+  text-transform: capitalize;
+}
+
+.projects .card .text {
+  margin-bottom: 2rem;
+}
+
+.projects .card footer {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+.projects .card svg {
+  cursor: pointer;
+}
+
+/* Updates */
+.updates {
+  display: grid;
+  gap: 30px;
+  align-content: start;
+}
+.news .cards {
+  border-radius: 6px;
+  background-color: white;
+  padding: 2rem;
+  display: grid;
+  gap: 20px;
+  box-shadow: var(--shadow);
+}
+
+.news .card h5 {
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+.news .card p {
+  font-size: 0.9rem;
+}
+.news .card:not(:first-child) {
+  border-top: 2px solid #e0e0e0;
+  padding-top: 0.5rem;
+}
+
+.trending .profiles {
+  background: white;
+  padding: 2rem;
+  display: grid;
+  justify-content: start;
+  gap: 20px;
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+}
+
+.trending .profile .username {
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+.trending .profile .text {
+  font-size: 0.9rem;
+}
